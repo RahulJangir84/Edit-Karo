@@ -7,12 +7,10 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { name: "Home", href: "#home" },
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "Services", href: "#services" },
-  { name: "About", href: "#about" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Portfolio", href: "/portfolio" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -72,9 +70,9 @@ export default function Navbar() {
             
             <div className="w-[1px] h-6 bg-white/20 mx-2" />
 
-            <button className="relative px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-full backdrop-blur-md border border-white/10 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] cursor-none">
-              Book Discovery Call
-            </button>
+            <Link href="/contact" className="relative px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-full backdrop-blur-md border border-white/10 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] cursor-none">
+              Get Started
+            </Link>
           </nav>
 
           {/* Mobile Toggle */}
@@ -126,12 +124,13 @@ export default function Navbar() {
                 transition={{ duration: 0.4, delay: NAV_LINKS.length * 0.1, ease: "easeOut" }}
                 className="mt-8 pt-8 border-t border-white/10"
               >
-                <button 
+                <Link 
+                  href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full py-4 bg-accent-blue text-black font-semibold text-lg rounded-full"
+                  className="block w-full py-4 text-center bg-accent-blue text-black font-semibold text-lg rounded-full"
                 >
-                  Book Discovery Call
-                </button>
+                  Get Started
+                </Link>
               </motion.div>
             </nav>
           </motion.div>

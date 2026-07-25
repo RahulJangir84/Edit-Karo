@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { Rocket, Play,Bird ,ArrowUpRight } from "lucide-react";
 
 const FOOTER_LINKS = [
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Services", href: "#services" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const SOCIALS = [
@@ -39,13 +39,13 @@ export default function Footer() {
           <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto relative z-10">
             Let&apos;s build content that converts. Book a free discovery call and get a custom edit strategy.
           </p>
-          <a
-            href="mailto:hello@editkaro.in"
+          <Link
+            href="/contact"
             className="relative z-10 inline-flex items-center gap-3 px-10 py-5 bg-white text-black font-semibold rounded-full hover:bg-accent-cyan transition-colors duration-300 group cursor-none"
           >
             Book Discovery Call
             <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
-          </a>
+          </Link>
         </motion.div>
       </div>
 

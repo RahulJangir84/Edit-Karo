@@ -4,10 +4,10 @@ import { useRef, useEffect } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 
 const STATS = [
-  { value: 500, suffix: "+", label: "Videos Delivered" },
-  { value: 98, suffix: "%", label: "Client Retention Rate" },
-  { value: 120, suffix: "M+", label: "Total Views Generated" },
-  { value: 5, suffix: "★", label: "Average Rating" },
+  { value: 500, suffix: "+", label: "Projects" },
+  { value: 200, suffix: "+", label: "Clients" },
+  { value: 10, suffix: "M+", label: "Views Generated" },
+  { value: 99, suffix: "%", label: "Happy Clients" },
 ];
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {

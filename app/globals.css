@@ -1,5 +1,31 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #090909;
+  --color-foreground: #ffffff;
+  --color-accent-blue: #00E5FF;
+  --color-accent-purple: #B200FF;
+  --color-accent-cyan: #00FFC2;
+
+  --font-heading: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+
+  --animate-blob: blob 10s infinite alternate;
+  --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  @keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
 :root {
   --background: #090909;
   --foreground: #ffffff;

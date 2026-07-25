@@ -37,7 +37,7 @@ export default function Hero() {
           Editkaro.in Agency
         </motion.div>
 
-        <h2 className="font-heading text-[12vw] sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.85] mb-8 uppercase text-white flex flex-col items-center">
+<h2 className="font-heading text-[9vw] sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.95] mb-8 uppercase text-white flex flex-col items-center">
 
   <motion.span
     initial={{ opacity: 0, y: 100 }}
@@ -47,9 +47,9 @@ export default function Hero() {
       delay: 0.1,
       ease: [0.16, 1, 0.3, 1],
     }}
-    className="block overflow-hidden"
+    className="block overflow-hidden text-center"
   >
-    Stories That
+    Creative Video Editing
   </motion.span>
 
   <motion.span
@@ -60,9 +60,9 @@ export default function Hero() {
       delay: 0.25,
       ease: [0.16, 1, 0.3, 1],
     }}
-    className="block pb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-300 to-neutral-500"
+    className="block pb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-300 to-neutral-500 text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-2"
   >
-    Stop The Scroll.
+    That Makes Your Brand Stand Out
   </motion.span>
 
 </h2>
@@ -84,7 +84,7 @@ export default function Hero() {
         >
           <Magnetic strength={60}>
             <button className="group relative px-10 py-5 bg-white text-black font-semibold rounded-full overflow-hidden flex items-center gap-3 cursor-none">
-              <span className="relative z-10">View Our Work</span>
+              <span className="relative z-10">View Portfolio</span>
               <div className="relative z-10 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
                 <ArrowUpRight className="w-4 h-4" />
               </div>
@@ -97,7 +97,7 @@ export default function Hero() {
               <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-accent-purple group-hover:scale-110 transition-all duration-300">
                 <Play className="w-4 h-4 fill-current" />
               </div>
-              Watch Showreel
+              Contact Us
             </button>
           </Magnetic>
         </motion.div>

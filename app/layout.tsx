@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/layout/smoothScroll";
 import CustomCursor from "@/components/layout/customCursor";
 import Navbar from "@/components/layout/navbar";
+import ToastProvider from "@/components/ui/toast-provider";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CustomCursor />
           <Navbar />
           {children}
+          <ToastProvider />
         </SmoothScroll>
       </body>
     </html>
