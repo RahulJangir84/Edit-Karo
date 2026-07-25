@@ -3,9 +3,9 @@
 @theme {
   --color-background: #090909;
   --color-foreground: #ffffff;
-  --color-accent-blue: #00E5FF;
-  --color-accent-purple: #B200FF;
-  --color-accent-cyan: #00FFC2;
+  --color-accent-blue: #A1A1AA;
+  --color-accent-purple: #71717A;
+  --color-accent-cyan: #E4E4E7;
 
   --font-heading: var(--font-space-grotesk), sans-serif;
   --font-body: var(--font-inter), sans-serif;

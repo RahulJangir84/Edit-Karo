@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { SectionHeading } from "@/components/ui/section-heading";
 
 const TESTIMONIALS = [
   {
@@ -42,16 +43,11 @@ export default function Testimonials() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[40vw] bg-accent-purple/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto max-w-4xl relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="font-heading text-5xl md:text-7xl font-bold uppercase tracking-tighter text-white">
-            What Clients <span className="text-accent-purple">Say</span>
-          </h2>
-        </motion.div>
+        <SectionHeading 
+          title="What Clients Say" 
+          highlightWord="Say"
+          className="mb-16"
+        />
 
         <div className="relative glass border border-white/10 rounded-3xl p-10 md:p-16 overflow-hidden">
           <Quote className="absolute top-8 left-8 w-16 h-16 text-white/5" />
