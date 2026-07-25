@@ -8,20 +8,26 @@ import Testimonials from "@/components/home/testimonials";
 import FAQ from "@/components/home/faq";
 import EmailCollector from "@/components/home/email-collector";
 import Footer from "@/components/layout/footer";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col overflow-hidden">
-      <Hero />
-      <TrustedBy />
-      <Stats />
-      <Services />
-      <WhyChooseUs />
-      <PortfolioPreview />
-      <Testimonials />
-      <FAQ />
-      <EmailCollector />
-      <Footer />
-    </main>
-  );
+ return (
+ <main className="flex min-h-screen flex-col overflow-hidden">
+ <Hero />
+ <TrustedBy />
+ <Stats />
+ <Services />
+ <SectionDivider />
+ <WhyChooseUs />
+ <SectionDivider />
+ <PortfolioPreview />
+ <SectionDivider />
+ <Testimonials />
+ <SectionDivider />
+ <FAQ />
+ <SectionDivider />
+ <EmailCollector />
+ <Footer />
+ </main>
+ );
 }

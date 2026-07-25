@@ -1,31 +1,52 @@
 "use client";
 
+import { useRef, useState, MouseEvent } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface AnimatedCardProps {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
+ children: React.ReactNode;
+ className?: string;
+ delay?: number;
 }
 
 export function AnimatedCard({ children, className, delay = 0 }: AnimatedCardProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay }}
-      className={cn(
-        "group relative p-[1px] rounded-3xl overflow-hidden cursor-none",
-        className
-      )}
-    >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-accent-purple/50 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl z-0" />
-      
-            <div className="relative h-full bg-black/40 backdrop-blur-xl border border-white/5 rounded-3xl p-8 md:p-10 z-10 transition-transform duration-500 group-hover:bg-white/[0.02] flex flex-col">
-        {children}
-      </div>
-    </motion.div>
-  );
+ const cardRef = useRef<HTMLDivElement>(null);
+ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+ const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+ if (cardRef.current) {
+ const rect = cardRef.current.getBoundingClientRect();
+ setMousePosition({
+ x: e.clientX - rect.left,
+ y: e.clientY - rect.top,
+ });
+ }
+ };
+
+ return (
+ <motion.div
+ initial={{ opacity: 0, y: 30 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true, margin: "-50px" }}
+ transition={{ duration: 0.6, delay }}
+ ref={cardRef}
+ onMouseMove={handleMouseMove}
+ className={cn(
+ "group relative rounded-3xl overflow-hidden glass transition-colors duration-500 hover:bg-white/[0.04]",
+ className
+ )}
+ >
+ <div
+ className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 z-0"
+ style={{
+ background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(125,145,154,0.15), transparent 40%)`
+ }}
+ />
+
+ <div className="relative z-10 h-full p-8 md:p-10 flex flex-col">
+ {children}
+ </div>
+ </motion.div>
+ );
 }
