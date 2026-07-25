@@ -50,8 +50,7 @@ export function VideoCard({ project }: { project: Project }) {
           onMouseLeave={handleMouseLeave}
           className="group relative rounded-3xl overflow-hidden aspect-[4/5] glass border border-white/10 cursor-none h-full"
         >
-          {/* Spotlight Glow Effect */}
-          <div
+                    <div
             className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 z-30"
             style={{
               opacity,
@@ -59,8 +58,7 @@ export function VideoCard({ project }: { project: Project }) {
             }}
           />
 
-          <div className="absolute inset-0 bg-zinc-900 z-0"></div> {/* Replace with next/image in future */}
-          
+          <div className="absolute inset-0 bg-zinc-900 z-0"></div>           
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500 z-10" />
           
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 z-20 scale-50 group-hover:scale-100">

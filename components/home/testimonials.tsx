@@ -39,8 +39,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-32 px-6 relative overflow-hidden" id="testimonials">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[40vw] bg-accent-purple/10 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[40vw] bg-accent-purple/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto max-w-4xl relative z-10">
         <SectionHeading 
@@ -77,8 +76,7 @@ export default function Testimonials() {
           </AnimatePresence>
         </div>
 
-        {/* Controls */}
-        <div className="flex justify-center gap-4 mt-8 items-center">
+                <div className="flex justify-center gap-4 mt-8 items-center">
           <button onClick={prev} className="w-12 h-12 rounded-full glass border border-white/10 flex items-center justify-center text-white hover:border-accent-cyan/50 hover:text-accent-cyan transition-all duration-300 cursor-none">
             <ChevronLeft className="w-5 h-5" />
           </button>

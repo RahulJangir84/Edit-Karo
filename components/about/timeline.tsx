@@ -41,8 +41,7 @@ export default function Timeline() {
       />
 
       <div className="max-w-4xl mx-auto relative mt-16">
-        {/* Vertical Line */}
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-white/20 to-transparent md:-translate-x-1/2" />
+                <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-white/20 to-transparent md:-translate-x-1/2" />
 
         {TIMELINE.map((item, index) => (
           <motion.div
@@ -55,14 +54,11 @@ export default function Timeline() {
               index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
             } flex-row`}
           >
-            {/* Empty space for alternating layout */}
-            <div className="hidden md:block w-5/12" />
+                        <div className="hidden md:block w-5/12" />
 
-            {/* Glowing Dot */}
-            <div className="absolute left-[11px] md:left-1/2 w-3 h-3 bg-accent-cyan rounded-full md:-translate-x-1/2 mt-6 md:mt-0 shadow-[0_0_15px_rgba(0,255,194,0.8)] z-10" />
+                        <div className="absolute left-[11px] md:left-1/2 w-3 h-3 bg-accent-cyan rounded-full md:-translate-x-1/2 mt-6 md:mt-0 shadow-[0_0_15px_rgba(0,255,194,0.8)] z-10" />
 
-            {/* Content Box */}
-            <div className="w-11/12 md:w-5/12 pl-8 md:pl-0 glass p-8 rounded-3xl border border-white/10 hover:border-white/20 transition-colors">
+                        <div className="w-11/12 md:w-5/12 pl-8 md:pl-0 glass p-8 rounded-3xl border border-white/10 hover:border-white/20 transition-colors">
               <span className="text-accent-blue font-bold tracking-widest text-sm uppercase mb-2 block">
                 {item.year}
               </span>

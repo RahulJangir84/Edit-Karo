@@ -8,8 +8,7 @@ import { Target, Eye, ShieldCheck } from "lucide-react";
 export default function AboutHero() {
   return (
     <section className="py-20 px-6 container mx-auto relative z-10" id="about-hero">
-      {/* Abstract background shapes */}
-      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-accent-blue/10 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-accent-blue/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-accent-purple/10 rounded-full blur-[120px] pointer-events-none" />
 
       <SectionHeading 

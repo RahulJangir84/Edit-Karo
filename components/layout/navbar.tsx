@@ -17,7 +17,6 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Handle scroll to trigger glassmorphism
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -27,7 +26,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -45,14 +43,14 @@ export default function Navbar() {
         )}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          {/* Logo */}
+          
           <Link href="/" className="relative z-[110] group cursor-none">
             <span className="font-heading text-2xl font-bold tracking-tighter text-white">
               EDITKARO<span className="text-accent-cyan">.IN</span>
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
+          
           <nav className="hidden lg:flex items-center gap-8">
             <ul className="flex items-center gap-8">
               {NAV_LINKS.map((link) => (
@@ -75,7 +73,7 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* Mobile Toggle */}
+          
           <button
             className="lg:hidden relative z-[110] text-white p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -85,7 +83,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Drawer */}
+      
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -95,7 +93,7 @@ export default function Navbar() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-0 z-[105] bg-background/95 backdrop-blur-xl flex flex-col justify-center px-8"
           >
-            {/* Ambient background glows for drawer */}
+            
             <div className="absolute top-20 right-10 w-64 h-64 bg-accent-purple/20 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-20 left-10 w-64 h-64 bg-accent-blue/20 rounded-full blur-[100px] pointer-events-none" />
 

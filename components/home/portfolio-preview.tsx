@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { VideoCard, Project } from "@/components/ui/video-card";
 import { ArrowRight } from "lucide-react";
 
-// In a real app, this data might come from a CMS or an API.
 const FEATURED_PROJECTS: Project[] = [
   { id: 1, title: "Nike Air Max Drop", category: "Ads", image: "/placeholder.jpg", duration: "0:45" },
   { id: 2, title: "Valorant Montage", category: "Gaming Videos", image: "/placeholder.jpg", duration: "2:15" },

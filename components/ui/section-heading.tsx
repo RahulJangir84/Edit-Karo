@@ -20,7 +20,6 @@ export function SectionHeading({
   highlightWord,
   highlightGradient = "from-white via-neutral-300 to-neutral-500",
 }: SectionHeadingProps) {
-  // Simple logic: if highlightWord is provided, split the title by it.
   const parts = highlightWord ? title.split(highlightWord) : [title];
 
   return (

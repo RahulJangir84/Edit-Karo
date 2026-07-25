@@ -20,8 +20,7 @@ const SOCIALS = [
 export default function Footer() {
   return (
     <footer className="relative pt-24 pb-8 px-6 overflow-hidden border-t border-white/5" id="contact">
-      {/* CTA Banner */}
-      <div className="container mx-auto mb-20">
+            <div className="container mx-auto mb-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,8 +48,7 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      {/* Footer Bottom */}
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500">
+            <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500">
         <span className="font-heading font-bold text-white text-xl tracking-tighter">
           EDITKARO<span className="text-accent-cyan">.IN</span>
         </span>

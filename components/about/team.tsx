@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Camera, MoveRight, Bird } from "lucide-react";
 
-// Placeholder data as requested
 const TEAM_MEMBERS = [
   {
     name: "Alex Sterling",
@@ -51,11 +50,8 @@ export default function Team() {
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="group relative cursor-none"
           >
-            {/* Image Container */}
             <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden mb-6 border border-white/10">
-              <div className="absolute inset-0 bg-zinc-900 z-0"></div> {/* Replace with next/image */}
-              
-              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-zinc-900 z-0"></div>               
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center gap-4">
                 <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-accent-cyan hover:text-black text-white flex items-center justify-center transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
                   <Bird className="w-4 h-4" />
@@ -69,8 +65,7 @@ export default function Team() {
               </div>
             </div>
 
-            {/* Info */}
-            <div className="text-center">
+                        <div className="text-center">
               <h3 className="text-2xl font-heading font-bold text-white mb-1">{member.name}</h3>
               <p className="text-accent-cyan text-sm font-medium uppercase tracking-wider mb-3">{member.role}</p>
               <p className="text-gray-400 font-light text-sm leading-relaxed">{member.bio}</p>

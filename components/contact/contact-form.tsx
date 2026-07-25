@@ -10,9 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Send, Loader2 } from "lucide-react";
 
-// The Google Apps Script URL will go here
-// Users should replace this with their actual deployed Apps Script Web App URL
-const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby3MEm21-ctlFS83OcUsuIvhewu5MTRhUSlNzprXSDUk9oTQLNpWlpstBrTtwj4RlCi/exec";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -38,27 +36,18 @@ export default function ContactForm() {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     
-    // Simulate API call if URL is not provided
-    if (GOOGLE_SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      toast.success("Message sent successfully! (Simulation)");
-      setIsSubmitting(false);
-      reset();
-      return;
-    }
-
     try {
       const formData = new FormData();
       formData.append("name", data.name);
       formData.append("email", data.email);
       if (data.phone) formData.append("phone", data.phone);
       formData.append("message", data.message);
-      formData.append("type", "contact"); // To differentiate from subscribe form
+      formData.append("type", "contact");
 
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         body: formData,
-        // mode: "no-cors",
+        mode: "no-cors",
       });
 
       toast.success("Message sent! We'll get back to you shortly.");

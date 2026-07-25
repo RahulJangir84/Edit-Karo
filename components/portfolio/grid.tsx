@@ -19,7 +19,6 @@ const CATEGORIES = [
   "Ads"
 ];
 
-// Placeholder data covering all categories
 const PORTFOLIO_DATA: Project[] = [
   { id: 1, title: "Nike Air Max Drop", category: "Ads", image: "/placeholder.jpg", duration: "0:45" },
   { id: 2, title: "Valorant Montage", category: "Gaming Videos", image: "/placeholder.jpg", duration: "2:15" },
@@ -55,14 +54,13 @@ export default function PortfolioGrid() {
         subtitle="Explore our diverse range of high-converting, visually stunning video edits."
       />
 
-      {/* Floating Animated Filters */}
-      <div className="flex flex-wrap justify-center gap-3 mb-16 max-w-5xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-3 mb-16 max-w-5xl mx-auto">
         {CATEGORIES.map((cat) => (
           <button
             key={cat}
             onClick={() => {
               setActiveCategory(cat);
-              setVisibleCount(6); // Reset pagination on category change
+              setVisibleCount(6);
             }}
             className={`relative px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-300 cursor-none z-10 ${
               activeCategory === cat ? "text-black" : "text-gray-400 hover:text-white"
@@ -83,8 +81,7 @@ export default function PortfolioGrid() {
         ))}
       </div>
 
-      {/* Grid with Spotlight Cards */}
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <AnimatePresence mode="popLayout">
           {visibleProjects.map((project) => (
             <VideoCard key={project.id} project={project} />
@@ -92,8 +89,7 @@ export default function PortfolioGrid() {
         </AnimatePresence>
       </motion.div>
 
-      {/* Load More Button */}
-      {hasMore && (
+            {hasMore && (
         <div className="mt-16 text-center">
           <Button onClick={handleLoadMore} variant="outline" size="lg">
             Load More Projects

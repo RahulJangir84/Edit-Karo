@@ -11,9 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Send, Loader2 } from "lucide-react";
 
-// The Google Apps Script URL will go here
-// Users should replace this with their actual deployed Apps Script Web App URL
-const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby3MEm21-ctlFS83OcUsuIvhewu5MTRhUSlNzprXSDUk9oTQLNpWlpstBrTtwj4RlCi/exec";
 
 const subscribeSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -36,28 +34,17 @@ export default function EmailCollector() {
   const onSubmit = async (data: SubscribeFormValues) => {
     setIsSubmitting(true);
     
-    // Simulate API call if URL is not provided
-    if (GOOGLE_SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      toast.success("Subscribed successfully! (Simulation)");
-      setIsSubmitting(false);
-      reset();
-      return;
-    }
-
     try {
-      // Assuming Google Apps Script accepts standard form data or JSON
       const formData = new FormData();
       formData.append("email", data.email);
-      formData.append("type", "subscribe"); // Optional: to differentiate from contact form
+      formData.append("type", "subscribe");
 
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         body: formData,
-        // mode: "no-cors", // Sometimes needed for Google Apps Script
+        mode: "no-cors",
       });
 
-      // When using no-cors, response.ok is always false/opaque, so we just assume success if it didn't throw
       toast.success("Thanks for subscribing!");
       reset();
     } catch (error) {
@@ -80,8 +67,7 @@ export default function EmailCollector() {
           transition={{ duration: 0.6 }}
           className="glass border border-white/10 rounded-3xl p-10 md:p-16 text-center overflow-hidden relative"
         >
-          {/* Ambient Glow */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-accent-blue/20 rounded-full blur-[100px] pointer-events-none" />
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-accent-blue/20 rounded-full blur-[100px] pointer-events-none" />
           
           <SectionHeading 
             title="Stay Updated" 

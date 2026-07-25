@@ -21,8 +21,7 @@ export default function ContactPage() {
 
         <div className="flex flex-col lg:flex-row gap-16 max-w-6xl mx-auto mt-16">
           
-          {/* Left Side: Company Info */}
-          <div className="w-full lg:w-5/12 flex flex-col gap-10">
+                    <div className="w-full lg:w-5/12 flex flex-col gap-10">
             <div>
               <h3 className="text-3xl font-heading font-bold text-white mb-6">Contact Information</h3>
               <p className="text-gray-400 font-light leading-relaxed mb-8">
@@ -63,11 +62,9 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Right Side: Form */}
-          <div className="w-full lg:w-7/12">
+                    <div className="w-full lg:w-7/12">
             <div className="glass border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-              {/* Background glow */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-accent-cyan/10 rounded-full blur-[100px] pointer-events-none" />
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-accent-cyan/10 rounded-full blur-[100px] pointer-events-none" />
               
               <h3 className="text-2xl font-heading font-bold text-white mb-8 relative z-10">Send Us a Message</h3>
               <div className="relative z-10">
